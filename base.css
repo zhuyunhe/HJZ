@@ -1,0 +1,352 @@
+div, dl, dt, dd, ul, ol, li, i, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, header, nav, section, article, footer, aside {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    list-style-type: none;
+}
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	max-width: 600px;
+	margin: auto;
+	font-family: "微软雅黑", Helvetica, Arial, sans-serif;
+	background-color: inherit;
+	color: #343434;
+}
+a,a:focus,a:hover,a:active,a:visited{
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+a:hover{
+    cursor: pointer;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+div, span{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+img{
+	max-width: 100%;
+	vertical-align: middle;
+}
+/*清除浮动*/
+.clearfix:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+/*
+老loading层样式
+*/
+.loaderContainer{
+	position: fixed;
+	width: 100%;
+	max-width: 600px;
+	height: 600px;
+	margin: auto;
+	top: 0;
+	z-index: 10;
+	background-color: rgba(0,0,0,0.5);
+}
+.loaderContainer.little{
+    height: 80px !important;
+    border-radius: 10px;
+    top: 150px;
+    width: 80px;
+    left: 50%;
+    margin-left: -40px;
+    animation: transBackgroundOpacity 1s forwards;
+    -webkit-animation: transBackgroundOpacity 1s forwards;
+}
+.loaderContainer.little .loader{
+	top: 15px;
+}
+.loader{
+	position: relative;
+	width: 50px;
+	height: 50px;
+	left: 50%;
+	top: 200px;
+	margin-left: -25px;
+}
+.hide{
+	display: none;
+}
+@-webkit-keyframes uil-default-anim {
+	0% { opacity: 1} 
+	100% {opacity: 0} 
+}
+@keyframes uil-default-anim { 
+	0% { opacity: 1} 
+	100% {opacity: 0} 
+}
+.uil-default-css-normal{
+	position: relative;
+	background:none;
+	width:200px;
+	height:200px;
+}
+.uil-default-css-normal> div:nth-of-type(1){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: -0.5s;
+	animation-delay: -0.5s;
+}
+.uil-default-css-normal> div:nth-of-type(2){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: -0.4166666666666667s;
+	animation-delay: -0.4166666666666667s;
+}
+.uil-default-css-normal> div:nth-of-type(3){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: -0.33333333333333337s;
+	animation-delay: -0.33333333333333337s;
+}
+.uil-default-css-normal> div:nth-of-type(4){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: -0.25s;
+	animation-delay: -0.25s;
+}
+.uil-default-css-normal> div:nth-of-type(5){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: -0.16666666666666669s;
+	animation-delay: -0.16666666666666669s;
+}
+.uil-default-css-normal> div:nth-of-type(6){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: -0.08333333333333331s;
+	animation-delay: -0.08333333333333331s;
+}
+.uil-default-css-normal> div:nth-of-type(7){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+}
+.uil-default-css-normal> div:nth-of-type(8){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: 0.08333333333333337s;
+	animation-delay: 0.08333333333333337s;
+}
+.uil-default-css-normal> div:nth-of-type(9){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: 0.16666666666666663s;
+	animation-delay: 0.16666666666666663s;
+}
+.uil-default-css-normal> div:nth-of-type(10){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: 0.25s;
+	animation-delay: 0.25s;
+}
+.uil-default-css-normal> div:nth-of-type(11){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: 0.33333333333333337s;
+	animation-delay: 0.33333333333333337s;
+}
+.uil-default-css-normal> div:nth-of-type(12){
+	-webkit-animation: uil-default-anim 1s linear infinite;
+	animation: uil-default-anim 1s linear infinite;
+	-webkit-animation-delay: 0.41666666666666663s;
+	animation-delay: 0.41666666666666663s;
+}
+/*老loading层样式结束*/
+
+/*新loading层样式*/
+.loaderContainer_1{
+	position: fixed;
+	width: 100%;
+	max-width: 600px;
+	height: 600px;
+	margin: auto;
+	top: 0;
+	z-index: 10;
+	background-color: rgba(0,0,0,.3);
+}
+.loaderContainer_1.little{
+    height: 60px !important;
+    border-radius: 10px;
+    top: 150px;
+    width: 80px;
+    left: 50%;
+    margin-left: -40px;
+}
+.loaderContainer_1.below{
+	position: relative;
+    height: 60px !important;
+    background-color: #fff;
+}
+.loaderContainer_1.little .loading{
+	top: 20px;
+}
+.loaderContainer_1.below .loading{
+	top: 0px;
+}
+.loading{
+	position: relative;
+	width: 40px;
+	height: 20px;
+	margin: 0 auto;
+	top: 200px;
+}
+.loading span{
+	display: inline-block;
+	width: 8px;
+	height: 100%;
+	border-radius: 4px;
+	background-color: #f75449;
+}
+@-webkit-keyframes load{
+	0%,100%{
+		height: 20px;
+		background-color: #f75449;
+	}
+	50%{
+		height: 50px;
+		margin: -15px 0;
+		background-color: #ff393a;
+	}
+}
+@keyframes load{ 
+	0%,100%{
+		height: 20px;
+		background-color: #f75449;
+	}
+	50%{
+		height: 50px;
+		margin: -15px 0;
+		background-color: #ff393a;
+	}
+}
+.loading span:nth-child(1){
+	animation : load .5s ease infinite;
+	animation-delay: -0.2s;
+	-webkit-animation : load .5s ease infinite;
+	-webkit-animation-delay: -0.2s;
+}
+.loading span:nth-child(2){
+	animation : load .5s ease infinite;
+	animation-delay: -0.1s;
+	-webkit-animation : load .5s ease infinite;
+	-webkit-animation-delay: -0.1s;
+}
+.loading span:nth-child(3){
+	animation : load .5s ease infinite;
+	animation-delay : 0s;
+	-webkit-animation : load .5s ease infinite;
+	-webkit-animation-delay : 0s;
+}
+.loading span:nth-child(4){
+	animation : load .5s ease infinite;
+	animation-delay : 0.1s;
+	-webkit-animation : load .5s ease infinite;
+	-webkit-animation-delay : 0.1s;
+}
+.loading span:nth-child(5){
+	animation : load .5s ease infinite;
+	animation-delay : 0.2s;
+	-webkit-animation : load .5s ease infinite;
+	-webkit-animation-delay : 0.2s;
+}
+/*新loading层样式*/
+
+/*confirm弹窗样式*/
+.dialogMask{
+	display: none;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: fixed;
+	background-color: rgba(0,0,0,.5);
+	z-index: 1500;
+}
+.confirmWrap{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin-top: -100px;
+}
+.confirmDialog{
+	width: 250px;
+	margin: auto;
+	background-color: #fff;
+	border-radius: 5px;
+}
+.confirmBody{
+	position: relative;
+	line-height: 1.5;
+	padding: 20px;
+	text-align: center;
+	border-bottom: 1px solid #e8e8e8;
+}
+.confirmFooter{
+	overflow: hidden;
+}
+.confirmFooter > a{
+	display: block;
+	line-height:3em;
+	text-align: center;
+	cursor: pointer;
+}
+.normalConfirmWrap .confirmFooter > a{
+	border-left: 1px solid  #e8e8e8;
+	margin-left: -1px;
+	width: 50%;
+	float: left;
+}
+.confirmFooter a:first-of-type{
+	border-bottom-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	border-left: 0;
+	margin-left: 0;
+	margin-right: -1px;
+}
+.confirmFooter a:last-of-type{
+	border-bottom-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+
+}
+/*confirm弹窗样式结束*/
+
+/*info弹窗样式*/
+.infoContainer{
+	position: fixed;
+	top:200px;
+	width: 100%;
+	max-width: 600px;
+	text-align: center;
+	z-index: 99;
+	opacity: 1;
+}
+.innerText{
+	display: inline-block;
+	max-width: 80%;
+	padding: 12px 14px;
+	color: #fff;
+	background-color: #ff393a;
+	border-radius: 5px;
+}
+/*info弹窗样式结束*/
