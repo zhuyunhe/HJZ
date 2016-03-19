@@ -4,27 +4,56 @@ $(function(){
 	window.hjz.addLoader = function(opt){
 		var height = window.screen.availHeight;
 		opt = opt || {};
+		/*
 		var $loaderContainer = $(".loaderContainer");
 		if($loaderContainer.length){
 			$loaderContainer.removeClass('hide');
 		} else{
-			var loaderContainer = '<div class="loaderContainer"><div class="loader"><div class="uil-default-css-normal" style="-webkit-transform:scale(0.25);-moz-transform:scale(0.25);-webkit-transform-origin: 0 0;-moz-transform-origin: 0 0;">';
+			var loaderContainer = '<div class="loaderContainer"><div class="loader"><div class="uil-default-css-normal">';
 			for(var i=0; i<12; i++){
 				var angel = 30*i+'deg';
-				loaderContainer += '<div style="top:80px;left:93px;width:14px;height:40px;background:#fff;-webkit-transform:rotate('+angel+') translate(0,-60px); transform:rotate('+angel+') translate(0,-60px); border-radius:10px;position:absolute"></div>';
+				loaderContainer += '<div class="flake" style="-webkit-transform:rotate('+angel+') translate(0,-60px); transform:rotate('+angel+') translate(0,-60px);"></div>';
 			}
 			loaderContainer += '</div></div></div>';
 			$loaderContainer = $(loaderContainer);
 			$loaderContainer.css('height',height+'px');
 			$('body').append($loaderContainer);
-	}
+		}*/
+		var loaderContainer = document.querySelectorAll('.loaderContainer');
+		loaderContainer = Array.prototype.slice(loaderContainer);
+		if(loaderContainer.length){
+			window.hjz.removeClass(loaderContainer,'hide');
+		} else{
+			var div = document.createElement('div');
+			div.className = 'uil-default-css-normal';
+			for(var i=0; i<12; i++){
+				var angel = 30*i+'deg';
+				var flake = document.createElement('div');
+				flake.className = 'flake';
+				div.appendChild(flake);
+			} 
+			var loader = document.createElement('div');
+			loader.className = 'loader';
+			var loaderContainer = document.createElement('div');
+			loaderContainer.className = 'loaderContainer';
+			loaderContainer.style.height = height+'px';
+			loader.appendChild(div);
+			loaderContainer.appendChild(loader);
+			var little = opt['little'] || false;
+			if(little){
+				loaderContainer.className += ' little'; 
+			} else{
+				loaderContainer.className.replace('/ little/',''); 
+			}
+			document.body.appendChild(loaderContainer);
+ 		}
 
-		var little = opt['little'] || false;
+		/*var little = opt['little'] || false;
 		if(little){
 			$loaderContainer.addClass('little')
 		} else{
 			$loaderContainer.removeClass('little')
-		}
+		}*/
 	};
 
 	window.hjz.addLoader_1 = function(opt){
@@ -247,6 +276,43 @@ $(function(){
 		} else{
 			element['on'+type] = null;
 		}
-	}
+	};
+
+	//添加类
+	window.hjz.addClass = function(elements,value){
+		value = typeof value === 'string' && value;
+		if(value){
+			elements.forEach(function(item,index,array){
+				var cur = item.nodeType===1 && (item.className ? (' '+item.className+' ').replace('/\s/',' ') : ' ' );
+				if(cur){
+					if(cur.indexOf(' '+value+' ')<0){
+						cur += value;
+					}
+					if(cur !== item.className){
+						item.className = cur;
+					}
+				}
+			});
+		}
+		return elements;
+	};
+	//删除类
+	window.hjz.removeClass = function(elements,value){
+		value = typeof value === 'string' && value;
+		if(value){
+			elements.forEach(function(item,index,array){
+				var cur = item.nodeType===1 && item.className ? (' '+item.className+' ').replace('/\s/g',' ') : '';
+				if(cur){
+					while(cur.indexOf(' '+value+' ')){
+						cur.replace(' '+value+' ',' ');
+					}
+					if(cur !== item.className){
+						item.className = cur;
+					}
+				}
+			});
+		}
+		return elements;
+	};
 
 });
