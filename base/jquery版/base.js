@@ -4,85 +4,63 @@ $(function(){
 	window.hjz.addLoader = function(opt){
 		var height = window.screen.availHeight;
 		opt = opt || {};
-		var loaderContainer = document.querySelectorAll('.loaderContainer');
-		loaderContainer = Array.prototype.slice.call(loaderContainer);
-		if(loaderContainer.length){
-			window.hjz.removeClass(loaderContainer,'hide');
+		var $loaderContainer = $(".loaderContainer");
+		if($loaderContainer.length){
+			$loaderContainer.removeClass('hide');
 		} else{
-			var div = document.createElement('div');
-			div.className = 'uil-default-css-normal';
+			var loaderContainer = '<div class="loaderContainer"><div class="loader"><div class="uil-default-css-normal" style="-webkit-transform:scale(0.25);-moz-transform:scale(0.25);-webkit-transform-origin: 0 0;-moz-transform-origin: 0 0;">';
 			for(var i=0; i<12; i++){
 				var angel = 30*i+'deg';
-				var flake = document.createElement('div');
-				flake.className = 'flake';
-				div.appendChild(flake);
-			} 
-			var loader = document.createElement('div');
-			loader.className = 'loader';
-			var loaderContainer = document.createElement('div');
-			loaderContainer.className = 'loaderContainer';
-			loaderContainer.style.height = height+'px';
-			loader.appendChild(div);
-			loaderContainer.appendChild(loader);
-			var little = opt['little'] || false;
-			if(little){
-				loaderContainer.className += ' little'; 
-			} else{
-				loaderContainer.className.replace('/ little/',''); 
+				loaderContainer += '<div style="top:80px;left:93px;width:14px;height:40px;background:#fff;-webkit-transform:rotate('+angel+') translate(0,-60px); transform:rotate('+angel+') translate(0,-60px); border-radius:10px;position:absolute"></div>';
 			}
-			document.body.appendChild(loaderContainer);
- 		}
+			loaderContainer += '</div></div></div>';
+			$loaderContainer = $(loaderContainer);
+			$loaderContainer.css('height',height+'px');
+			$('body').append($loaderContainer);
+	}
+
+		var little = opt['little'] || false;
+		if(little){
+			$loaderContainer.addClass('little')
+		} else{
+			$loaderContainer.removeClass('little')
+		}
+	};
+
+	window.hjz.addLoader_1 = function(opt){
+		var height = window.screen.availHeight;
+		opt = opt || {};
+		var $loaderContainer_1 = $('.loaderContainer_1');
+		if($loaderContainer_1.length){
+			$loaderContainer_1.removeClass('hide');
+		} else{
+			$loaderContainer_1 = $('<div class="loaderContainer_1"><div class="loading"><span></span><span></span><span></span><span></span><span></span></div></div>');
+		}
+
+		$loaderContainer_1.css('height',height+'px');
+
+		var little = opt['little'] || false;
+		if(little){
+			$loaderContainer_1.addClass('little');
+		} else{
+			$loaderContainer_1.removeClass('little');
+		}
+
+		var below = opt['below'] || false;
+		if(below){
+			$loaderContainer_1.addClass('below');
+		} else{
+			$loaderContainer_1.removeClass('below');
+		}
+		
+		$('body').append($loaderContainer_1);
 	};
 
 	//去除loading层
 	window.hjz.removeLoader = function (){
-		var loaderContainer = document.querySelectorAll('.loaderContainer');
-		loaderContainer = Array.prototype.slice.call(loaderContainer);
-		if(loaderContainer.length){
-			window.hjz.addClass(loaderContainer,'hide');
-		}
+		$(".loaderContainer").addClass("hide");
+		$(".loaderContainer_1").addClass("hide");
 	};
-	/*
-	自定义确认框
-	* @param msg 提示信息
-	* @param opt 配置信息
-	* @returns {boolean} 返回值
-	*/
-	window.hjz.newConfirm = function(msg,opt){
-		var result = false;
-		var msg = msg || '';
-		var opt = opt || {};
-		var okText = opt.okText || '确定';
-		var cancelText = opt.cancelText || '确定';
-		var handler = opt.okLink || function(){};
-		var cancelHandler = opt.cancelLink || function(){};
-		var hideCancel = opt.hideCancel || false;
-		var hideOkAndCancelCancel = opt.hideOkAndCancel || false;
-		var closeButton = opt.hasCloseButton || false;		//应该是右上角的小x按钮
-		
-		var confirm = document.querySelectorAll('.confirmWrap');
-		confirm = Array.prototype.slice.call(confirm);
-		if(confirm.length<1){
-			var dialogMask = document.createElement('div');
-			dislogMask.className = 'dialogMask';
-			var confirmWrap = document.createElement('div');
-			confirmWrap.className = 'confirmWrap';
-			var confirmDialog = document.createElement('div');
-			confirmDialog.className = 'confirmDialog';
-			var confirmBody = document.createElement('div');
-			confirmBody.className = 'confirmBody';
-			var confirmFooter = document.createElement('div');
-			confirmFooter.className = 'confirmFooter';
-			var confirm = document.createElement('a');
-			confirm.className = 'confirm';
-			var cancel = document.createElement('a');
-			cancel.className = 'cancel';
-			confirmFooter.appendChild(confirm).appendChild(cancel);
-			confirmDialog.appendChild(confirmBody).appendChild(confirmFooter);
-			confirmWrap.appendChild(confirmDialog);
-			dislogMask.appendChild(confirmWrap);
-		}
-	}
 
 	/*
 	自定义确认框
@@ -248,63 +226,6 @@ $(function(){
 			opt['hideCancel'] = true;
 			window.hjz.newConfirm(msg,opt);
 		}
-	};
-
-	//添加事件
-	window.hjz.addHandler = function(element,type,handler){
-		if(element.addEventListener){	//DOM2级
-			element.addEventListener(type,handler,false);	//false表示事件冒泡阶段调用处理程序
-		} else if(element.attachEvent){		//IE事件处理程序
-			element.removeEvent('on'+type,handler);
-		} else{	//DOM0级
-			element['on'+type] = handler;
-		}
-	}
-	//移除事件
-	window.hjz.removeHandler = function(element,type,handler){
-		if(element.removeEventListener){
-			element.removeEventListener(type,handler,false);
-		} else if(element.detachEvent){
-			element.detachEvent('on'+type,handler);
-		} else{
-			element['on'+type] = null;
-		}
-	};
-	//添加类
-	window.hjz.addClass = function(elements,value){
-		value = typeof value === 'string' && value;
-		if(value){
-			elements.forEach(function(item,index,array){
-				var cur = item.nodeType===1 && (item.className ? (' '+item.className+' ').replace('/\s/',' ') : ' ' );
-				if(cur){
-					if(cur.indexOf(' '+value+' ')<0){
-						cur += value;
-					}
-					if(cur !== item.className){
-						item.className = cur;
-					}
-				}
-			});
-		}
-		return elements;
-	};
-	//删除类
-	window.hjz.removeClass = function(elements,value){
-		value = typeof value === 'string' && value;
-		if(value){
-			elements.forEach(function(item,index,array){
-				var cur = item.nodeType===1 && item.className ? (' '+item.className+' ').replace('/\s/g',' ') : '';
-				if(cur){
-					while(cur.indexOf(' '+value+' ')){
-						cur.replace(' '+value+' ',' ');
-					}
-					if(cur !== item.className){
-						item.className = cur;
-					}
-				}
-			});
-		}
-		return elements;
 	};
 
 });

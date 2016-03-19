@@ -59,7 +59,7 @@ img{
 	margin: auto;
 	top: 0;
 	z-index: 10;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.5);
 }
 .loaderContainer.little{
     height: 80px !important;
@@ -98,121 +98,178 @@ img{
 	background:none;
 	width:200px;
 	height:200px;
-	transform:scale(0.25);
-	-webkit-transform:scale(0.25);
-	-moz-transform:scale(0.25);
-	transform-origin:0 0;
-	-webkit-transform-origin: 0 0;
-	-moz-transform-origin: 0 0;
-}
-.flake{
-	position: absolute;
-	top: 80px;
-	left: 93px;
-	width: 14px;
-	height: 40px;
-	background-color: #fff;
-	border-radius: 7px;
 }
 .uil-default-css-normal> div:nth-of-type(1){
-	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation: uil-default-anim 1s linear infinite;
-	animation-delay: -0.5s;
+	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: -0.5s;
-	transform:rotate(0) translate(0,-60px);
-	-webkit-transform:rotate(0) translate(0,-60px); 
+	animation-delay: -0.5s;
 }
 .uil-default-css-normal> div:nth-of-type(2){
 	-webkit-animation: uil-default-anim 1s linear infinite;
 	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: -0.4166666666666667s;
 	animation-delay: -0.4166666666666667s;
-	transform:rotate(30deg) translate(0,-60px);
-	-webkit-transform:rotate(30deg) translate(0,-60px); 
 }
 .uil-default-css-normal> div:nth-of-type(3){
 	-webkit-animation: uil-default-anim 1s linear infinite;
 	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: -0.33333333333333337s;
 	animation-delay: -0.33333333333333337s;
-	transform:rotate(60deg) translate(0,-60px);
-	-webkit-transform:rotate(60deg) translate(0,-60px); 
 }
 .uil-default-css-normal> div:nth-of-type(4){
 	-webkit-animation: uil-default-anim 1s linear infinite;
 	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: -0.25s;
 	animation-delay: -0.25s;
-	transform:rotate(90deg) translate(0,-60px);
-	-webkit-transform:rotate(90deg) translate(0,-60px); 
 }
 .uil-default-css-normal> div:nth-of-type(5){
 	-webkit-animation: uil-default-anim 1s linear infinite;
 	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: -0.16666666666666669s;
 	animation-delay: -0.16666666666666669s;
-	transform:rotate(120deg) translate(0,-60px);
-	-webkit-transform:rotate(120deg) translate(0,-60px); 
 }
 .uil-default-css-normal> div:nth-of-type(6){
 	-webkit-animation: uil-default-anim 1s linear infinite;
 	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: -0.08333333333333331s;
 	animation-delay: -0.08333333333333331s;
-	transform:rotate(150deg) translate(0,-60px);
-	-webkit-transform:rotate(150deg) translate(0,-60px); 
 }
 .uil-default-css-normal> div:nth-of-type(7){
 	-webkit-animation: uil-default-anim 1s linear infinite;
 	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: 0s;
 	animation-delay: 0s;
-	transform:rotate(180deg) translate(0,-60px);
-	-webkit-transform:rotate(180deg) translate(0,-60px); 
 }
 .uil-default-css-normal> div:nth-of-type(8){
 	-webkit-animation: uil-default-anim 1s linear infinite;
 	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: 0.08333333333333337s;
 	animation-delay: 0.08333333333333337s;
-	transform:rotate(210deg) translate(0,-60px);
-	-webkit-transform:rotate(210deg) translate(0,-60px); 
 }
 .uil-default-css-normal> div:nth-of-type(9){
 	-webkit-animation: uil-default-anim 1s linear infinite;
 	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: 0.16666666666666663s;
 	animation-delay: 0.16666666666666663s;
-	transform:rotate(240deg) translate(0,-60px);
-	-webkit-transform:rotate(240deg) translate(0,-60px); 
 }
 .uil-default-css-normal> div:nth-of-type(10){
 	-webkit-animation: uil-default-anim 1s linear infinite;
 	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: 0.25s;
 	animation-delay: 0.25s;
-	transform:rotate(270deg) translate(0,-60px);
-	-webkit-transform:rotate(270deg) translate(0,-60px); 
 }
 .uil-default-css-normal> div:nth-of-type(11){
 	-webkit-animation: uil-default-anim 1s linear infinite;
 	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: 0.33333333333333337s;
 	animation-delay: 0.33333333333333337s;
-	transform:rotate(300deg) translate(0,-60px);
-	-webkit-transform:rotate(300deg) translate(0,-60px); 
 }
 .uil-default-css-normal> div:nth-of-type(12){
 	-webkit-animation: uil-default-anim 1s linear infinite;
 	animation: uil-default-anim 1s linear infinite;
 	-webkit-animation-delay: 0.41666666666666663s;
 	animation-delay: 0.41666666666666663s;
-	transform:rotate(330deg) translate(0,-60px);
-	-webkit-transform:rotate(330deg) translate(0,-60px); 
 }
 /*老loading层样式结束*/
 
-
+/*新loading层样式*/
+.loaderContainer_1{
+	position: fixed;
+	width: 100%;
+	max-width: 600px;
+	height: 600px;
+	margin: auto;
+	top: 0;
+	z-index: 10;
+	background-color: rgba(0,0,0,.3);
+}
+.loaderContainer_1.little{
+    height: 60px !important;
+    border-radius: 10px;
+    top: 150px;
+    width: 80px;
+    left: 50%;
+    margin-left: -40px;
+}
+.loaderContainer_1.below{
+	position: relative;
+    height: 60px !important;
+    background-color: #fff;
+}
+.loaderContainer_1.little .loading{
+	top: 20px;
+}
+.loaderContainer_1.below .loading{
+	top: 0px;
+}
+.loading{
+	position: relative;
+	width: 40px;
+	height: 20px;
+	margin: 0 auto;
+	top: 200px;
+}
+.loading span{
+	display: inline-block;
+	width: 8px;
+	height: 100%;
+	border-radius: 4px;
+	background-color: #f75449;
+}
+@-webkit-keyframes load{
+	0%,100%{
+		height: 20px;
+		background-color: #f75449;
+	}
+	50%{
+		height: 50px;
+		margin: -15px 0;
+		background-color: #ff393a;
+	}
+}
+@keyframes load{ 
+	0%,100%{
+		height: 20px;
+		background-color: #f75449;
+	}
+	50%{
+		height: 50px;
+		margin: -15px 0;
+		background-color: #ff393a;
+	}
+}
+.loading span:nth-child(1){
+	animation : load .5s ease infinite;
+	animation-delay: -0.2s;
+	-webkit-animation : load .5s ease infinite;
+	-webkit-animation-delay: -0.2s;
+}
+.loading span:nth-child(2){
+	animation : load .5s ease infinite;
+	animation-delay: -0.1s;
+	-webkit-animation : load .5s ease infinite;
+	-webkit-animation-delay: -0.1s;
+}
+.loading span:nth-child(3){
+	animation : load .5s ease infinite;
+	animation-delay : 0s;
+	-webkit-animation : load .5s ease infinite;
+	-webkit-animation-delay : 0s;
+}
+.loading span:nth-child(4){
+	animation : load .5s ease infinite;
+	animation-delay : 0.1s;
+	-webkit-animation : load .5s ease infinite;
+	-webkit-animation-delay : 0.1s;
+}
+.loading span:nth-child(5){
+	animation : load .5s ease infinite;
+	animation-delay : 0.2s;
+	-webkit-animation : load .5s ease infinite;
+	-webkit-animation-delay : 0.2s;
+}
+/*新loading层样式*/
 
 /*confirm弹窗样式*/
 .dialogMask{
