@@ -228,4 +228,25 @@ $(function(){
 		}
 	};
 
+	//添加事件
+	window.hjz.addHandler = function(element,type,handler){
+		if(element.addEventListener){	//DOM2级
+			element.addEventListener(type,handler,false);	//false表示事件冒泡阶段调用处理程序
+		} else if(element.attachEvent){		//IE事件处理程序
+			element.removeEvent('on'+type,handler);
+		} else{	//DOM0级
+			element['on'+type] = handler;
+		}
+	}
+	//移除事件
+	window.hjz.removeHandler = function(element,type,handler){
+		if(element.removeEventListener){
+			element.removeEventListener(type,handler,false);
+		} else if(element.detachEvent){
+			element.detachEvent('on'+type,handler);
+		} else{
+			element['on'+type] = null;
+		}
+	}
+
 });
