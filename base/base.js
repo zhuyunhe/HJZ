@@ -1,4 +1,4 @@
-$(function(){
+;(function(){
 	window.hjz = window.hjz || {};
 
 	window.hjz.addLoader = function(opt){
@@ -48,28 +48,30 @@ $(function(){
 	* @param opt 配置信息
 	* @returns {boolean} 返回值
 	*/
-	window.hjz.newConfirm = function(msg,opt){
+	window.hjz.newConfirm_z = function(msg,opt){
 		var result = false;
 		var msg = msg || '';
 		var opt = opt || {};
 		var okText = opt.okText || '确定';
-		var cancelText = opt.cancelText || '确定';
+		var cancelText = opt.cancelText || '取消';
 		var handler = opt.okLink || function(){};
 		var cancelHandler = opt.cancelLink || function(){};
 		var hideCancel = opt.hideCancel || false;
 		var hideOkAndCancelCancel = opt.hideOkAndCancel || false;
 		var closeButton = opt.hasCloseButton || false;		//应该是右上角的小x按钮
 		
-		var confirm = document.querySelectorAll('.confirmWrap');
-		confirm = Array.prototype.slice.call(confirm);
-		if(confirm.length<1){
+		var confirmWrap = document.querySelector('.confirmWrap');
+		var confirmBody;
+		//confirmWrap = Array.prototype.slice.call(confirmWrap);
+		if(!confirmWrap){
 			var dialogMask = document.createElement('div');
-			dislogMask.className = 'dialogMask';
+			dialogMask.className = 'dialogMask';
+			dialogMask.style.display = 'block';
 			var confirmWrap = document.createElement('div');
 			confirmWrap.className = 'confirmWrap';
 			var confirmDialog = document.createElement('div');
 			confirmDialog.className = 'confirmDialog';
-			var confirmBody = document.createElement('div');
+			confirmBody = document.createElement('div');
 			confirmBody.className = 'confirmBody';
 			var confirmFooter = document.createElement('div');
 			confirmFooter.className = 'confirmFooter';
@@ -77,78 +79,50 @@ $(function(){
 			confirm.className = 'confirm';
 			var cancel = document.createElement('a');
 			cancel.className = 'cancel';
-			confirmFooter.appendChild(confirm).appendChild(cancel);
-			confirmDialog.appendChild(confirmBody).appendChild(confirmFooter);
+			confirmFooter.appendChild(confirm);
+			confirmFooter.appendChild(cancel);
+			confirmDialog.appendChild(confirmBody);
+			confirmDialog.appendChild(confirmFooter);
 			confirmWrap.appendChild(confirmDialog);
-			dislogMask.appendChild(confirmWrap);
-		}
-	}
+			dialogMask.appendChild(confirmWrap);
+			document.body.appendChild(dialogMask);
 
-	/*
-	自定义确认框
-	* @param msg 提示信息
-	* @param opt 配置信息
-	* @returns {boolean} 返回值
-	*/
-	window.hjz.newConfirm = function(msg,opt){
-		var result = false;
-		var msg = msg || '';
-		var opt = opt || {};
-		var okText = opt.okText || '确定';
-		var cancelText = opt.cancelText || '取消';
-		var callback = opt.okLink || function(){};
-		var cancelCallback = opt.cancelLink || function(){};
-		var hideCancel = opt.hideCancel || false;
-		var hideOkAndCancelCancel = opt.hideOkAndCancel || false;
-		closeButton = opt.hasCloseButton || false;		//应该是右上角的小x按钮
-
-		var $confirmWrap = $('.confirmWrap');
-		if($confirmWrap.length < 1){
-			$(['<div class="dialogMask" style="display:block;">','<div class="confirmWrap">','<div class="confirmDialog">','<div class="confirmBody"></div>','<div class="confirmFooter">','<a class="confirm">确定</a>','<a class="cancel">取消</a>','</div></div></div></div>'].join('')).appendTo(document.body);
-			$confirmWrap = $('.confirmWrap');
-
-			$confirmWrap.find('.confirm').on('click',function(){
-				$('.dialogMask').hide();
-				var callback = $(this).data('callback');	//默认的点击确定的回调
-				if(callback){
-					if(typeof callback === 'string'){
-						window.hjz.goto(callback);
-					} else{
-						callback();	//执行回调
-					}
+			//确定按钮绑定事件
+			window.hjz.addHandler(confirm,'click',function(){
+				dialogMask.style.display = 'none';
+				if(typeof handler === 'string'){
+					window.hjz.goto(handler);
+				} else{
+					handler();
 				}
-				$('.dialogMask').hide();
+			});
+			//取消按钮绑定事件
+			window.hjz.addHandler(cancel,'click',function(){
+				dialogMask.style.display = 'none';
+				if(typeof cancelHandler === 'string'){
+					window.hjz.goto(cancelHandler);
+				} else{
+					cancelHandler();
+				}
 			});
 
-			$confirmWrap.find('.cancel').on('click',function(){
-				var callback = $(this).data('cancelCallback');
-				if(callback){
-					if(typeof callback === 'string'){
-						window.hjz.goto(callback);
-					} else{
-						callback();
-					}
-				}
-				$('.dialogMask').hide();
-			});
-		} else{	//$confirmWrap.length>=1
-				$('.dialogMask').show();
+		} else{ //之前存在弹窗框
+			document.querySelector('.dialogMask').style.display = 'block';
 		}
+		hjz.toggleClass(confirmWrap,'normalConfirmWrap',!hideCancel);
+		confirmBody = document.querySelector('.confirmBody');
+		confirmBody.innerText = msg;
+		document.querySelector('.confirm').innerText = okText;
+		document.querySelector('.cancel').innerText = cancelText;
 
-		$confirmWrap.toggleClass('normalConfirmWrap',!hideCancel);	//是否要隐藏取消按钮
-		$confirmWrap.find('.confirmBody').html(msg);
 		if(closeButton){
-			var closeBtn = $('<div class="confirm_close"></div>');
-			$confirmWrap.find('.confirmBody').append(closeBtn);
-			closeBtn.on('click',function(){
-				$('.dialogMask').hide();
+			var closeBtn = document.createElement('div');
+			closeBtn.className = 'confirm_close';
+			confirmBody.appendChild(closeBtn);
+			hjz.addHandler(closeBtn,'click',function(){
+				dialogMask.style.display = 'none';
 			});
 		}
-
-		$confirmWrap.find('.confirm').text(okText).data('callback',callback||null);
-		$confirmWrap.find('.cancel').text(cancelText).data('cancel_callback',cancelCallback||null);
-		$confirmWrap.css('margin-top',$confirmWrap.height()*-1);
-
 	};
 
 	//url跳转
@@ -235,6 +209,22 @@ $(function(){
 			},1000)
 		},delayTime);
 	};
+	window.hjz.info = function(msg){
+		var delayTime = Math.max(1500,msg.length*100);
+		var infoContainer = document.querySelector('.infoContainer');
+		if(!infoContainer){
+			infoContainer = document.createElement('div');
+			infoContainer.className = 'infoContainer';
+			var innerText = document.createElement('div');
+			innerText.className = 'innerText';
+			innerText.innerText = msg;
+			infoContainer.appendChild(innerText);
+		} else{
+			hjz.removeClass(infoContainer,'hide');
+			var innerText = document.querySelector('.innerText');
+			innerText.innerText = msg;
+		}
+	}
 
 	//自定义一个alert弹窗
 	window.hjz.newAlert = function(msg,callback){
@@ -274,17 +264,29 @@ $(function(){
 	window.hjz.addClass = function(elements,value){
 		value = typeof value === 'string' && value;
 		if(value){
-			elements.forEach(function(item,index,array){
-				var cur = item.nodeType===1 && (item.className ? (' '+item.className+' ').replace('/\s/',' ') : ' ' );
+			if(elements instanceof Array){
+				elements.forEach(function(item,index,array){
+					var cur = item.nodeType===1 && (item.className ? (' '+item.className+' ').replace('/\s/',' ') : ' ' );
+					if(cur){
+						if(cur.indexOf(' '+value+' ')<0){
+							cur += value;
+						}
+						if(cur !== item.className){
+							item.className = cur;
+						}
+					}
+				});
+			} else if(typeof elements === 'object' && elements.nodeType === 1){
+				var cur = elements.className ? (' '+elements.className+' ').replace('/\s/',' ') : ' ' ;
 				if(cur){
 					if(cur.indexOf(' '+value+' ')<0){
 						cur += value;
 					}
-					if(cur !== item.className){
-						item.className = cur;
+					if(cur !== elements.className){
+						elements.className = cur;
 					}
 				}
-			});
+			}
 		}
 		return elements;
 	};
@@ -292,19 +294,91 @@ $(function(){
 	window.hjz.removeClass = function(elements,value){
 		value = typeof value === 'string' && value;
 		if(value){
-			elements.forEach(function(item,index,array){
-				var cur = item.nodeType===1 && item.className ? (' '+item.className+' ').replace('/\s/g',' ') : '';
+			if(elements instanceof Array){	//如果是一个DOM元素的数组
+				elements.forEach(function(item,index,array){
+					var cur = item.nodeType===1 && item.className ? (' '+item.className+' ').replace('/\s/g',' ') : '';
+					if(cur){
+						while(cur.indexOf(' '+value+' ')){
+							cur.replace(' '+value+' ',' ');
+						}
+						if(cur !== item.className){
+							item.className = cur;
+						}
+					}
+				});
+			} else if(typeof elements === 'object' && elements.nodeType === 1){	//如果是单个DOM元素
+				var cur = elements.className ? (' '+elements.className+' ').replace('/\s/g',' ') : '';
 				if(cur){
 					while(cur.indexOf(' '+value+' ')){
 						cur.replace(' '+value+' ',' ');
 					}
-					if(cur !== item.className){
-						item.className = cur;
+					if(cur !== elements.className){
+						elements.className = cur;
 					}
 				}
-			});
+			}
 		}
 		return elements;
 	};
+	//切换类
+	window.hjz.toggleClass = function(elements,value,stateVal){
+		var type = typeof value;
+		if(elements instanceof Array){
+			if(type === 'string' && typeof stateVal === 'boolean'){
+				return type ? hjz.addClass(elements,value) : hjz.removeClass(elements,value);
+			}
+			//如果type没指定
+			 return elements.forEach(function(item,index,array){
+				if(type === 'string'){
+					var self = item;
+					var className;
+					var i = 0;
+					var classNames = value.match('/\S+/g') || [];
+					while((className = classNames[i])){
+						if(self.hasClass(className)){
+							hjz.removeClass(self,value);
+						} else{
+							hjz.addClass(self,value);
+						}
+					}
+				}
+			});
+		} else if(typeof elements === 'object' && elements.nodeType === 1){
+			if(type === 'string' && typeof stateVal === 'boolean'){
+				return type ? hjz.addClass(elements,value) : hjz.removeClass(elements,value);
+			} else if(type === 'string'){
+				var className;
+				var i = 0;
+				var classNames = value.match('/\S+/g') || [];
+				while((className = classNames[i])){
+					if(self.hasClass(className)){
+						hjz.removeClass(self,value);
+					} else{
+						hjz.addClass(self,value);
+					}
+				} 
+			}
+		}
+	}
+	//判断类
+	window.hjz.hasClass = function(elements,value){
+		var className = ' '+value+' ';
+		if(elements instanceof Array){
+			var i = 0;
+			var length = elements.length;
+			for(;i<length;i++){
+				if ( elements[i].nodeType === 1 && (" " + elements[i].className + " ").replace(/\s/g, " ").indexOf( className ) >= 0 ) {
+				return true;
+				}
+			}
+			return false;
+		} else if(typeof elements === 'object' && elements.nodeType === 1){
+			if ((" " + elements[i].className + " ").replace(/\s/g, " ").indexOf( className ) >= 0 ) {
+				return true;
+			} else{
+				return false;
+			}
+		}
+	}
 
-});
+})()

@@ -272,6 +272,15 @@ img{
 	-webkit-border-bottom-right-radius: 5px;
 
 }
+.confirm_close{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAbFBMVEUAAADe3t7e3t7e3t7e3t7d3d3f39/e3t7e3t7f39/f39/f39/e3t7g4ODi4uLk5OTk5OTj4+Pd3d3d3d3d3d3d3d3d3d3d3d3e3t7f39/g4ODh4eHe3t7d3d3q6ure3t7////5+fn39/f7+/ud+mmxAAAAH3RSTlMA/HT3j4BK8eeEZ15aOCMbFxbz3NTNxZh9TkErJw8MeLZdcQAAASdJREFUOMttkgkSwiAMRVO21trNfRdb739HmSSTgPq0U+D/LAUgZ7p2xnTXCf6yMccqItXRbH7kp9/GjK1/lnrfUCz/Ek2f62vLKoEDu850XtMM+Iijt7igGdhiucqD6ucZmOaBhhVO3kvMWN74WkFitDieX4s2urxmXLRjMpxjFAdCOnFOhkNUh+rMIVXAxOJgXaqNEKR9dLAuXxKglQk5UNdPbsHTWHJQvAR5NBBUn/qQKA+txFdYH/vQDC1civiZOtUMFxh+9o9zEAPAvogXB3n2fFaqq0NOa7CqfzvsAAlHx4267Acdt6P7Xut9QWRW8+0Pcg11S/AfgDEoawYeGhBMmYHcpDOB+1DqAAXTqYp5+GmCb+5uF5mdu8Nfbp1xznQ3yPgAKelQk/pVahwAAAAASUVORK5CYII=");
+	width: 16px;
+	height: 16px;
+	background-size: 16px;
+}
 /*confirm弹窗样式结束*/
 
 /*info弹窗样式*/
