@@ -48,7 +48,7 @@
 	* @param opt 配置信息
 	* @returns {boolean} 返回值
 	*/
-	window.hjz.newConfirm_z = function(msg,opt){
+	window.hjz.newConfirm = function(msg,opt){
 		var result = false;
 		var msg = msg || '';
 		var opt = opt || {};
@@ -190,27 +190,6 @@
 	//弹出一个消息提示框
 	window.hjz.info = function(msg){
 		var delayTime = Math.max(1500,msg.length*100);
-		var $infoContainer = $('.infoContainer');
-		if($infoContainer.length){
-			$infoContainer.removeClass('hide').find('.innerText').html(msg);
-		} else{
-			$infoContainer = $('<div class="infoContainer"><div class="innerText">'+msg+'</div></div>');
-			$('body').append($infoContainer);
-		}
-
-		//初始化计时器归零
-		clearTimeout(window.hjz.t1);
-		clearTimeout(window.hjz.t2);
-		$infoContainer.css('opacity',1).stop();
-		window.hjz.t1 = setTimeout(function(){
-			$infoContainer.css('opacity',1).animate({opacity:0},500);
-			window.hjz.st2 = setTimeout(function(){
-				$infoContainer.css('opacity',1).addClass('hide');
-			},1000)
-		},delayTime);
-	};
-	window.hjz.info = function(msg){
-		var delayTime = Math.max(1500,msg.length*100);
 		var infoContainer = document.querySelector('.infoContainer');
 		if(!infoContainer){
 			infoContainer = document.createElement('div');
@@ -219,11 +198,21 @@
 			innerText.className = 'innerText';
 			innerText.innerText = msg;
 			infoContainer.appendChild(innerText);
+			document.body.appendChild(infoContainer);
 		} else{
 			hjz.removeClass(infoContainer,'hide');
 			var innerText = document.querySelector('.innerText');
 			innerText.innerText = msg;
 		}
+		//初始化计时器归零
+		clearTimeout(window.hjz.t1);
+		clearTimeout(window.hjz.t2);
+		window.hjz.t1 = setTimeout(function(){
+			infoContainer.style.opacity = 1;
+			window.hjz.st2 = setTimeout(function(){
+				hjz.addClass(infoContainer,'hide');
+			},1000)
+		},delayTime);
 	}
 
 	//自定义一个alert弹窗
@@ -298,8 +287,8 @@
 				elements.forEach(function(item,index,array){
 					var cur = item.nodeType===1 && item.className ? (' '+item.className+' ').replace('/\s/g',' ') : '';
 					if(cur){
-						while(cur.indexOf(' '+value+' ')){
-							cur.replace(' '+value+' ',' ');
+						while(cur.indexOf(' '+value+' ') >= 0){
+							cur = cur.replace(' '+value+' ',' ');
 						}
 						if(cur !== item.className){
 							item.className = cur;
@@ -309,8 +298,8 @@
 			} else if(typeof elements === 'object' && elements.nodeType === 1){	//如果是单个DOM元素
 				var cur = elements.className ? (' '+elements.className+' ').replace('/\s/g',' ') : '';
 				if(cur){
-					while(cur.indexOf(' '+value+' ')){
-						cur.replace(' '+value+' ',' ');
+					while(cur.indexOf(' '+value+' ') >= 0){
+						cur = cur.replace(' '+value+' ',' ');
 					}
 					if(cur !== elements.className){
 						elements.className = cur;
