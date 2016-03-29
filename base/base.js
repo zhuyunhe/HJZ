@@ -407,10 +407,11 @@
 		this.selector = '[data-lz-src]';
 		this.iTop = setting.iTop || 0;
 		this.iBottom = setting.iTop || 0;
-
+		this.fLoadImg = setting.fLoadImg || function(img){};
 		//存储需要加载的元素的列表
 		this.aElements = [];
-		this.bStatus = true;	//检测状态值
+		this.bStatus = true;		//检测状态值
+		this.initStatus = false;	//初始化标志
 		this.bSquare = setting.bSquare || false;
 
 		this.init();
@@ -423,7 +424,8 @@
 				_this.getElements();
 				_this.each();
 			});
-		}
+			this.initStatus = true;
+		};
 
 		window.hjz.addHandler(window,'scroll',function(){
 			if(_this.bStatus){
@@ -453,7 +455,7 @@
 			//图片进入可视区，加载它
 			if(this.testMeet(aElements[i].tag)){
 				this.loadImg(aElements[i].tag,aElements[i].src);
-				aElements.splice(i,i);	//从待加载数组中删除
+				aElements.splice(i,1);	//从待加载数组中删除
 				i--;
 			}
 		}
@@ -469,6 +471,7 @@
 		var status = element.getBoundingClientRect();
 		//元素自身的高度
 		var iObjHeight = element.offsetHeight;
+		//网页可视区的高度
 		var iWinHeight = window.innerHeight;
 		var count = 0;
 
@@ -498,23 +501,36 @@
 		var width = img.width;
 		//默认占位图片的高度
 		var height = img.height;
-		var imgObj = new Image();
+		var imgObj = new Image();//imgObj对象保存了原图片的信息，url、尺寸等
 		imgObj.src = url;
 
 		window.hjz.addHandler(imgObj,'load',function(){
-			imgObj.parentNode.style.overflow = 'hide';
-			imgObj.parentNode.style.width = width+'px';
-			imgObj.parentNode.style.height = height+'px';
-			var w2 = 0;	//宽度
-			var h2 = 0;	//高度
+			if(_this.bSquare){
+				img.parentNode.style.overflow = 'hidden';
+				img.parentNode.style.width = width+'px';
+				img.parentNode.style.height = height+'px';
+				var w2 = 0;	//宽度
+				var h2 = 0;	//高度
 
-			//长方形,高度需设置为100%
-			if(imgObj.width > imgObj.height){
-				w2 = (imgObj.width*(width/imgObj.height))
+				//长方形,高度需设置为100%
+				if(imgObj.width > imgObj.height){
+					w2 = (width*(imgObj.width/imgObj.height));	//宽度等比缩放
+					img.style.width = w2+'px';
+					img.style.height = height+'px';
+					img.style.marginLeft = '-'+((w2-width)/2)+'px';
+				} else if(imgObj.width < imgObj.height){ //树形
+					h2 = (height*(imgObj.height/imgObj.width));
+					img.style.height = h2+'px';
+					img.style.width = width+'px';
+					img.style.marginTop = '-'+((h2-height)/2)+'px';
+				} else{ //正方形
+					img.style.height = '100%';
+					img.style.width = '100%';
+				}
 			}
-
-
-
+			img.src = imgObj.src;
+			_this.fLoadImg(img);
 		});
 	};
+	window.LazyLoadImg = LazyLoadImg;
 })();

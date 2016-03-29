@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>h5原生js图片懒加载插件</title>
+<style type="text/css">
+*{ padding:0; margin:0; list-style:none;}
+ul{ padding:10px;}
+img{ display:block; width:100%; margin-bottom:10px;}
+ @-webkit-keyframes fadeIn {
+		0% {
+			opacity:0.5
+		}100% {
+			opacity:1
+		}
+	}
+	
+@keyframes fadeIn {
+	0% {
+		opacity:0.5
+	}100% {
+		opacity:1
+	}
+}
+</style>
+<script src="base.js"></script>
+</head>
+
+<body>
+    <div id="ul">
+        <li><img data-lz-src="images/1.png" src="images/default.png" alt="默认图片"></li>
+        <li><img data-lz-src="images/2.png" src="images/default.png" alt="默认图片"></li>
+        <li><img data-lz-src="images/3.jpg" src="images/default.png" alt="默认图片"></li>
+        <li><img data-lz-src="images/4.png" src="images/default.png" alt="默认图片"></li>
+        <li><img data-lz-src="images/5.jpg" src="images/default.png" alt="默认图片"></li>
+        <li><img data-lz-src="images/6.jpg" src="images/default.png" alt="默认图片"></li>
+        <li><img data-lz-src="images/7.jpg" src="images/default.png" alt="默认图片"></li>
+        <li><img data-lz-src="images/8.jpg" src="images/default.png" alt="默认图片"></li>
+        <li><img data-lz-src="images/9.jpg" src="images/default.png" alt="默认图片"></li>
+    </div>
+    <a style="display:block; line-height:60px; font-size:18px;text-align:center;text-decoration:none; BACKGROUND-COLOR: #0dc67a; MARGIN: 10px 5%; WIDTH: 90%; HEIGHT: 60px; COLOR: #fff; border-radius: 3px" href="http://shang.qq.com/wpa/qunwpa?idkey=8cb72c3003636e91351be7ba1591d9260d3c3fc8dff328879f1cc7788c9e0501" target="_blank">点击此处报名</a>
+    <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=8cb72c3003636e91351be7ba1591d9260d3c3fc8dff328879f1cc7788c9e0501"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="晚归凑齐4人约Uber" title="晚归凑齐4人约Uber"></a>
+<script>
+    var LazyLoadImg = new LazyLoadImg({
+            iTop: 20, //元素在顶部伸出的距离才加载
+            iBottom: 20, //元素在底部伸出的距离才加载
+            //bSquare:true,
+            fLoadImg: function (img) {  //图片加载完成后加入过度动画
+                img.style.cssText += '-webkit-animation: fadeIn 01s ease 0.2s 1 both;animation: fadeIn 1s ease 0.2s 1 both;';
+            }
+    });
+    //var LazyLoadImg = new LazyLoadImg({});
+    //0.oSeeDownloadImg.getElements();
+    //通过此方法，可以将新插入的标签添加到懒加载队列中
+	
+</script>
+</body>
+</html>
