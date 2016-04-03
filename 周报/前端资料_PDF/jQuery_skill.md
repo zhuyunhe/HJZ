@@ -4,7 +4,7 @@
   ***
 	·<a class="top" href="#">back to top</a>
 	//回到顶部  
-	$('.top').on('click',function(e){
+	$('.top').on('click',function(e){ 
 		e.preventDefault();
 		$(html,body).animate({scrollTop:0},800)
 	});·
