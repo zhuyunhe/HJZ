@@ -11,13 +11,14 @@
 2. 图片预加载<br>
   如果网页使用了很多隐藏图片文件，使用图片预加载可以提升用户体验    
   ***<br>
+```
 $.preloadImages = function(){
 	for(var i=0; i<arguments.length; i++){
-	```$('<img>').attr('src',arguments[i]);
+	$('<img>').attr('src',arguments[i]);
 	}
-	}
-	$.preloadImages('images/hover-on.png','images/hover-off.png');
-
+}
+$.preloadImages('images/hover-on.png','images/hover-off.png');
+```
 3. 全局Ajax错误处理<br>  
   当一个Ajax调用返回一个404或500错误时，将执行该错误处理。   
   ***<br>
