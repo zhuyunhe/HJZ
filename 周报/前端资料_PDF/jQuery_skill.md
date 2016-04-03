@@ -1,7 +1,7 @@
 # jQuery的一些使用技巧总结
 ###
 1. 利用jQuery的animate方法，创建简单的`滚动`到顶部动画<br>
-  ***<br>
+  ---<br>
 ```
 <a class="top" href="#">back to top</a>
 //回到顶部  
@@ -22,8 +22,8 @@ $.preloadImages = function(){
 $.preloadImages('images/hover-on.png','images/hover-off.png');
 ```
 3. 全局Ajax错误处理<br>  
-  当一个Ajax调用返回一个404或500错误时，将执行该错误处理。   
-  ***<br>
+  当一个Ajax调用返回一个404或500错误时，将执行该错误处理。
+---
 ```
 $(document).ajaxError(function(e,xhr,settings,error){
 	console.log(error);
