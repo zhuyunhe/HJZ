@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Vue.js入门</title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no" />
+	<meta name="msapplication-tap-highlight" content="no">
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{message}}
+	</div>
+	<div id="app2">
+		<p>{{message}}</p>
+		<input v-model="message">
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data:{
+				message:'Hello Vue.js zyh'
+			}
+		});
+		new Vue({
+			el:'#app2',
+			data:{
+				message:'双向绑定'
+			}
+		});
+	</script>
+</body>
+</html>

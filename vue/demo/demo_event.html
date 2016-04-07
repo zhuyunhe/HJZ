@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Vue.js入门-事件绑定</title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no" />
+	<meta name="msapplication-tap-highlight" content="no">
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<!-- View -->
+	<div id="example">
+		<button v-on:click="greet">greet</button>
+	</div>
+	
+	<script type="text/javascript">
+	//Model
+	var data = {
+		name : 'zyh'
+	};
+
+	//ViewModel，一个Vue的根实例
+	var vm = new Vue({
+				el: '#example',
+				data: data,
+				//在method对象中定义方法
+				methods: {
+					greet: function(event){
+						//方法内的'this'指向vm
+						console.log('hello '+this.name+'!');
+						
+						//'event'是原生DOM事件						
+						console.log(event.target.tagName);
+					}
+				}
+			});
+	
+	//DOM会自动响应数据变化，我们不需要撰写任何DOM操作代码：被绑定增强的HTML模板是底层数据状态的声明式映射，数据不过是普通的JavaScript对象。视图（View）完全由数据驱动。
+	</script>
+</body>
+</html>

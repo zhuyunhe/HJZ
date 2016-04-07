@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<title>表单控件双向绑定</title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no" />
+	<meta name="msapplication-tap-highlight" content="no">
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<span>Message is: {{message}}</span>
+		<br>
+		<input type="text" v-model="message" placeholder="edit me">
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#app',
+		});
+	</script>
+</body>
+</html>

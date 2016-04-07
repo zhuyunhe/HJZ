@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Vue.js入门</title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no" />
+	<meta name="msapplication-tap-highlight" content="no">
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<!-- View -->
+	<div id="demo_1">
+		<h1 v-if="ok">Yes</h1>
+		<h1 v-else>NoNo</h1>
+	</div>
+	
+	<script type="text/javascript">
+	//Model
+	var data = {
+		ok : false
+	};
+
+	//ViewModel，一个Vue的根实例
+	var vm = new Vue({
+				el: '#demo_1',
+				data: data
+			});
+	
+	//DOM会自动响应数据变化，我们不需要撰写任何DOM操作代码：被绑定增强的HTML模板是底层数据状态的声明式映射，数据不过是普通的JavaScript对象。视图（View）完全由数据驱动。
+	</script>
+</body>
+</html>

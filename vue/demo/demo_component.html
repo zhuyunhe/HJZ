@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<title>组件</title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no" />
+	<meta name="msapplication-tap-highlight" content="no">
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<my-component></my-component>
+	</div>
+	<script type="text/javascript">
+		//定义
+		var MyComponent = Vue.extend({
+			template: '<div>A custom component!</div>'
+		});
+		//注册
+		Vue.component('my-component',MyComponent);
+
+		//创建根实例
+		var vm = new Vue({
+			el:'#app',
+		});
+		//组件的模板替换了自定义元素，自定义元素的作用只是作为一个挂载点
+	</script>
+</body>
+</html>
