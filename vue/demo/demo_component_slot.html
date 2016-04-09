@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<title>组件-事件1</title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no" />
+	<meta name="msapplication-tap-highlight" content="no">
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<app>
+		<app-header></app-header>
+		<app-footer></app-footer>
+	</app>
+	<script type="text/javascript">
+		//注册子组件
+		Vue.component('child',{
+			template:'#child-template',
+			data:function(){
+				return {msg:'hello'}
+			},
+			methods:{
+				notify:function(){
+					console.log('sss');
+					if(this.msg.trim()){
+						this.$dispatch('child-msg',this.msg);
+						this.msg='';
+					}
+				}
+			}
+		});
+
+		//启动父组件
+		//收到消息时，将事件推入一个数组
+		var parent = new Vue({
+			el: '#events-example',
+			data:{
+				message:[]
+			},
+			methods:{
+				handleIt:function(msg){
+					this.message.push(msg);
+				}
+			}
+		});		
+	</script>
+</body>
+</html>
