@@ -380,6 +380,14 @@
 				url = addURLParam(url, prop, data[prop]);
 			}
 			data = null;
+		} else{
+				data = (function(obj){ // 转成post需要的字符串.
+					    var str = "";
+					    for(var prop in obj){
+					        str += prop + "=" + obj[prop] + "&"
+					    }
+					    return str;
+						})(data);
 		}
 
 		var xhr = new XMLHttpRequest();
