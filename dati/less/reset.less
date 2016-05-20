@@ -1,0 +1,57 @@
+@bgColor : #f7f7f7;
+@fontColor : #343434;
+/*basic reset*/
+div, dl, dt, dd, ul, ol, li, i, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, header, nav, section, article, footer, aside {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    list-style-type: none;
+}
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	max-width: 600px;
+	margin: auto;
+	font-family: "微软雅黑", Helvetica, Arial, sans-serif;
+	color: @fontColor;
+    background-color: @bgColor;
+}
+a,a:focus,a:hover,a:active,a:visited{
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+a:hover{
+    cursor: pointer;
+}
+div{
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+div, span{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+img{
+	max-width: 100%;
+	vertical-align: bottom;
+}
+/*清除浮动*/
+.clearfix:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    *zoom: 1;
+}

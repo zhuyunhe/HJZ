@@ -1,0 +1,203 @@
+@import 'reset.less';
+@bgColor : #f8f9fa;
+@option_yes : #13c3c3;
+html{
+	font-size: 62.5%;
+}
+/* 顶部样式 */
+.header{
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	max-width: 600px;
+	line-height: 4.4rem;
+	height: 4.4rem;
+	margin: auto;
+	background-color: @bgColor;
+	border-bottom: 1px solid #ddd;
+	z-index: 100;
+}
+.chapter,.number{
+	-webkit-flex: 1 1 auto;
+	-moz-flex: 1 1 auto;
+	-ms-flex: 1 1 auto;
+	-o-flex: 1 1 auto;
+	flex: 1 1 auto;
+}
+.chapter{
+	-webkit-flex-basis: 70%;
+	-moz-flex-basis: 70%;
+	-ms-flex-basis: 70%;
+	-o-flex-basis: 70%;
+	flex-basis: 70%;
+	padding-left: 20px;
+	font-size: 1.6rem;
+}
+.number{
+	text-align: center;
+}
+.header .number em{
+	font-size: 2rem;
+	font-style: normal;
+	color:#777;
+}
+.header .number span{
+	font-size: 1.4rem;
+	color:#bbb;
+}
+
+/* 底部样式 */
+.student_arrow_fixed{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	max-width: 600px;
+	margin: auto;
+	background-color: @bgColor;
+	-webkit-transition: 0.2s all ease;
+	-o-transition: 0.2s all ease;
+	transition: 0.2s all ease;
+	border-top: 1px solid #ddd;
+}
+.student_arrow_con{
+	position: relative;
+	padding: 2rem 1.4rem .7em 1.4em;
+	height: 7rem;
+}
+.student_arrow_con_show{
+	height: auto;
+}
+.option_arrow{
+	position: absolute;
+	left: 50%;
+	top: -2.7rem;
+	height: 2.7rem;
+	width: 6.2rem;
+	margin-left: -3.1rem;
+	background: url(../../images/tecent_coop/option_arrow_bg.png) left bottom no-repeat;
+	background-size: 6.2rem auto;
+	text-align: center;
+}
+.option_arrow>img{
+	width: 12px;
+	padding: .18rem;
+	transition: 0.4s ease-in;
+}
+.option_arrow_down{
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+}
+.student_arrowcon{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	word-break: keep-all;
+}
+.student_arrowcon ul{
+	position: relative;
+	float: left;
+	width: 100%;
+	-webkit-transition: 0.2s all ease;
+	-o-transition: 0.2s all ease;
+	transition: 0.2s all ease;
+}
+.student_arrowcon ul li{
+	width: 20%;
+	float: left;
+	margin-bottom: 2rem;
+}
+.student_arrowcon span{
+	display: block;
+	width: 3.4rem;
+	height: 3.4rem;
+	line-height: 3.4rem;
+	border-radius: 50%;
+	text-align: center;
+	border: .1rem solid #bbb;
+	color: #bbb;
+	background-color: #fff;
+}
+
+.student_arrowcon span.option_yes{
+	background: @option_yes;
+	border: .1rem solid @option_yes;
+	color: #fff;
+}
+.student_arrowcon span.this_option{
+	background: #fff;
+	border: .1rem solid @option_yes;
+	color: #bbb;
+}
+
+/* 中间题目样式 */
+#since{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#content{
+	height: 100%;
+	background-color: #fff;
+}
+#since .question_box{
+	float: left;
+	height: 100%;
+	overflow: hidden;
+}
+.question_box_y{
+	padding: 67px 0 85px;
+}
+.question_tit{
+	padding: 1.1rem 1.4rem .7rem;
+	font-size: 1.6rem;
+	color: #bbb;
+	line-height: 2.5rem;
+	background: #fff;
+}
+.question_options{
+	padding: .7rem 1.4rem;
+}
+.qo_list{
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	padding: 1rem 0;
+}
+.qol_titb{
+	width: 3.4rem;
+	margin-right: 1.2rem;
+}
+.qol_tit{
+	float: left;
+	width: 3.4rem;
+	height: 3.4rem;
+	line-height: 3.4rem;
+	border-radius: 50%;
+	text-align: center;
+	border: .1rem solid #bbb;
+	color:#bbb;
+}
+.qol_tit_yes{
+	background: @option_yes;
+	border: .1rem solid @option_yes;
+	color: #fff;
+}
+.qol_con{
+	flex:1 1 auto;
+	margin-top: .6rem;
+	font-size: 1.6rem;
+	line-height: 2.7rem;
+}
