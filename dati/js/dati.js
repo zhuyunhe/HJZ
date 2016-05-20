@@ -39,7 +39,7 @@ $(function(){
 	//根据题目id从后台请求数据
 	function ajaxGetData(examId){
 		$.ajax({
-			url : "http://haojiazhang123.com/question_review/get_question_set.json",
+			url : "mockData.json",
 			type : "get",
 			dataType : "JSON",
 			data : {

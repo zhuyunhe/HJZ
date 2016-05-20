@@ -1,0 +1,106 @@
+{
+    "status": "success",
+    "extra_qq": "",
+    "data": [
+        {
+            "text_title": "字母",
+            "text_unit": "基础知识积累与运用",
+            "knowledgeId": "1",
+            "option_c": "Y(   i )    R(   r )    B(  b  )    H(  h  )\n\t\t\t</td>",
+            "option_a": "A(  a  )    E( e   )    G(  g  )    S(  s  )",
+            "option_d": null,
+            "stem": "<tbody><tr><td>\t\t\t\t我能写出下面大写字母的小写，错误的是（   ）。 <br>\t\t</tr></tbody>",
+            "option_b": "Q(  q  )    F(   f )   M(  m  )    T(  t  )",
+            "version": "1",
+            "analysis": "<table style=\"WORD-BREAK: break-all;\" border=\"0\" cellspacing=\"0\" width=\"100%\"><tr style=\"margin-top: 2em\"><td><span style=\"font-family: '应用字体 Regular', '应用字体';\">试题难度：</span><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_l.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_l.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_h.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_h.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_h.png\" /></td></tr><tr ><td style=\"padding-top:1em;padding-bottom:1em;\"><p><span style=\"font-family: '应用字体 Regular', '应用字体';  color:grey;\">解答：</span></p></td></tr> </table>\n选项C：“Y”的小写应当是“y”。<br>\n故选：C.<table style=\"WORD-BREAK: break-all\" border=\"0\" cellspacing=\"0\" width=\"100%\"><tr><td style=\"padding-top:1em\"> <p><span style=\"font-family: '应用字体 Regular', '应用字体'; color: grey;\">考点：</span></p></td></tr><tr><td style=\"padding-top:1em\"><span style=\"padding: 0.3em 1em 0.35em;line-height:2em; background: #0ea3f9;color:#ffffff;border-radius:1em\" onclick=GetKnowledgeAnalysis(1,'字母') >字母</span></td></tr></table><script type='text/javascript' defer='defer'>function GetPhoneCat() {var userAgentInfo = navigator.userAgent;var Agents = new Array(\"Android\", \"iPhone\", \"SymbianOS\", \"Windows Phone\", \"iPad\", \"iPod\");var platname = \"Android\";var isPC = true;for (var v = 0; v<Agents.length; v++) {if (userAgentInfo.indexOf(Agents[v]) > 0) { platname = Agents[v]; isPC = false;break;}}return platname;}function GetKnowledgeAnalysis(knowledgeid,knowledgename) {var phoneCat = GetPhoneCat();if (phoneCat === \"Android\") {window.testSite.toTestSite(knowledgeid,knowledgename);}if (phoneCat === \"iPhone\"||phoneCat === \"iPad\"||phoneCat === \"iPod\") {toTestSite(knowledgeid,knowledgename);} }</script><script type='text/javascript' defer='defer'>window.addEventListener('load',function(){var imgArr =document.getElementsByTagName('img');if(imgArr.length >= 1){for(var i= 0;i < imgArr.length ;i++){var img = imgArr[i];var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;if(w<=0 || w=='NaN'){w=305;};if(img.width > w){img.setAttribute('width','100%');}img.setAttribute('max-width','100%');}} var tableArr = document.getElementsByTagName('TABLE');if(tableArr.length > 0){var tb = tableArr[0];               var text = tb.style.cssText + ' line-height:150%;-webkit-text-size-adjust:none;';tb.setAttribute('style',text);}    }) </script>",
+            "grade": "x1",
+            "answer": "C",
+            "chapterId": "001x1001",
+            "bodys": "<table><tbody>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t我能写出下面大写字母的小写，错误的是（ &nbsp; ）。 <br>\nA．A(&nbsp;&nbsp;a&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;E(&nbsp;e&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;G(&nbsp;&nbsp;g&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;S(&nbsp;&nbsp;s&nbsp;&nbsp;)&nbsp;<br>\nB．Q(&nbsp;&nbsp;q&nbsp;&nbsp;)&nbsp;&nbsp; &nbsp;F(&nbsp;&nbsp;&nbsp;f&nbsp;)&nbsp;&nbsp;&nbsp;M(&nbsp;&nbsp;m&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;T(&nbsp;&nbsp;t&nbsp;&nbsp;)<br>\nC．Y(&nbsp;&nbsp;&nbsp;i&nbsp;)&nbsp; &nbsp;&nbsp;R(&nbsp;&nbsp;&nbsp;r&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;B(&nbsp;&nbsp;b&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;H(&nbsp;&nbsp;h&nbsp;&nbsp;)\n\t\t\t</td>\n\t\t</tr>\n\t</tbody></table><script type='text/javascript' defer='defer'>window.addEventListener('load',function(){var imgArr =document.getElementsByTagName('img');if(imgArr.length >= 1){for(var i= 0;i < imgArr.length ;i++){var img = imgArr[i];var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;if(w<=0 || w=='NaN'){w=305;};if(img.width > w){img.setAttribute('width','100%');}img.setAttribute('max-width','100%');}} var tableArr = document.getElementsByTagName('TABLE');if(tableArr.length > 0){var tb = tableArr[0];               var text = tb.style.cssText + ' line-height:150%;-webkit-text-size-adjust:none;';tb.setAttribute('style',text);}    }) </script>",
+            "question_id": "23519",
+            "options": "ABC",
+            "types": "1",
+            "subject": "01"
+        },
+        {
+            "text_title": "字母",
+            "text_unit": "基础知识积累与运用",
+            "knowledgeId": "1",
+            "option_c": "十六个整体认读音节：zhi chi shi ri zi ci si yi wu yu ye yüe yin yun yuan ying",
+            "option_a": "六个单韵母：a o e i u ü",
+            "option_d": null,
+            "stem": "<tbody><tr><td>\t\t\t\t写一写单韵母、复韵母和整体认读音节，不完全正确的是哪项（  ）<br></td>\t\t</tr></tbody>",
+            "option_b": "八个复韵母：ai ei ui ao ou iü ie üe",
+            "version": "1",
+            "analysis": "<table style=\"WORD-BREAK: break-all;\" border=\"0\" cellspacing=\"0\" width=\"100%\"><tr style=\"margin-top: 2em\"><td><span style=\"font-family: '应用字体 Regular', '应用字体';\">试题难度：</span><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_l.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_l.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_h.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_h.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_h.png\" /></td></tr><tr ><td style=\"padding-top:1em;padding-bottom:1em;\"><p><span style=\"font-family: '应用字体 Regular', '应用字体';  color:grey;\">解答：</span></p></td></tr> </table>\n根据音节进行分析即可。<br>\n十六个整体认读音节：zhi chi shi ri zi ci si yi wu yu ye yue yin yun yuan ying.<br>\n故选：C.<table style=\"WORD-BREAK: break-all\" border=\"0\" cellspacing=\"0\" width=\"100%\"><tr><td style=\"padding-top:1em\"> <p><span style=\"font-family: '应用字体 Regular', '应用字体'; color: grey;\">考点：</span></p></td></tr><tr><td style=\"padding-top:1em\"><span style=\"padding: 0.3em 1em 0.35em;line-height:2em; background: #0ea3f9;color:#ffffff;border-radius:1em\" onclick=GetKnowledgeAnalysis(1,'字母') >字母</span></td></tr><tr><td style=\"padding-top:1em\"><span style=\"padding: 0.3em 1em 0.35em;line-height:2em; background: #0ea3f9;color:#ffffff;border-radius:1em\" onclick=GetKnowledgeAnalysis(2,'拼音') >拼音</span></td></tr></table><script type='text/javascript' defer='defer'>function GetPhoneCat() {var userAgentInfo = navigator.userAgent;var Agents = new Array(\"Android\", \"iPhone\", \"SymbianOS\", \"Windows Phone\", \"iPad\", \"iPod\");var platname = \"Android\";var isPC = true;for (var v = 0; v<Agents.length; v++) {if (userAgentInfo.indexOf(Agents[v]) > 0) { platname = Agents[v]; isPC = false;break;}}return platname;}function GetKnowledgeAnalysis(knowledgeid,knowledgename) {var phoneCat = GetPhoneCat();if (phoneCat === \"Android\") {window.testSite.toTestSite(knowledgeid,knowledgename);}if (phoneCat === \"iPhone\"||phoneCat === \"iPad\"||phoneCat === \"iPod\") {toTestSite(knowledgeid,knowledgename);} }</script><script type='text/javascript' defer='defer'>window.addEventListener('load',function(){var imgArr =document.getElementsByTagName('img');if(imgArr.length >= 1){for(var i= 0;i < imgArr.length ;i++){var img = imgArr[i];var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;if(w<=0 || w=='NaN'){w=305;};if(img.width > w){img.setAttribute('width','100%');}img.setAttribute('max-width','100%');}} var tableArr = document.getElementsByTagName('TABLE');if(tableArr.length > 0){var tb = tableArr[0];               var text = tb.style.cssText + ' line-height:150%;-webkit-text-size-adjust:none;';tb.setAttribute('style',text);}    }) </script>",
+            "grade": "x1",
+            "answer": "C",
+            "chapterId": "001x1001",
+            "bodys": "<table><tbody>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t写一写单韵母、复韵母和整体认读音节，不完全正确的是哪项（ &nbsp;）<br>\n<br>\nA．六个单韵母：a o e i u ü&nbsp;<br>\nB．八个复韵母：ai ei ui ao ou iü ie üe<br>\nC．十六个整体认读音节：zhi chi shi ri zi ci si yi wu yu ye yüe yin yun yuan ying<br>\n\t\t\t</td>\n\t\t</tr>\n\t</tbody></table><script type='text/javascript' defer='defer'>window.addEventListener('load',function(){var imgArr =document.getElementsByTagName('img');if(imgArr.length >= 1){for(var i= 0;i < imgArr.length ;i++){var img = imgArr[i];var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;if(w<=0 || w=='NaN'){w=305;};if(img.width > w){img.setAttribute('width','100%');}img.setAttribute('max-width','100%');}} var tableArr = document.getElementsByTagName('TABLE');if(tableArr.length > 0){var tb = tableArr[0];               var text = tb.style.cssText + ' line-height:150%;-webkit-text-size-adjust:none;';tb.setAttribute('style',text);}    }) </script>",
+            "question_id": "25513",
+            "options": "ABC",
+            "types": "1",
+            "subject": "01"
+        },
+        {
+            "text_title": "字母",
+            "text_unit": "基础知识积累与运用",
+            "knowledgeId": "1",
+            "option_c": null,
+            "option_a": "ün   an   un   in   en",
+            "option_d": null,
+            "stem": "<tbody><tr><td>\t\t\t\t选出下面是前鼻韵母的一组（   ）<br>\t\t</tr></tbody>",
+            "option_b": "ong   eng   ing   ang\n\t\t\t</td>",
+            "version": "1",
+            "analysis": "<table style=\"WORD-BREAK: break-all;\" border=\"0\" cellspacing=\"0\" width=\"100%\"><tr style=\"margin-top: 2em\"><td><span style=\"font-family: '应用字体 Regular', '应用字体';\">试题难度：</span><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_l.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_l.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_h.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_h.png\" /><img style=\"height:1em\" src=\"http://pic2.mofangge.com/img/photo/star_h.png\" /></td></tr><tr ><td style=\"padding-top:1em;padding-bottom:1em;\"><p><span style=\"font-family: '应用字体 Regular', '应用字体';  color:grey;\">解答：</span></p></td></tr> </table>\n前鼻韵母： an &nbsp;en &nbsp;in &nbsp;ün &nbsp;un <br>\n后鼻韵母： ang &nbsp;eng &nbsp;ing &nbsp;ong<br>\n故选：A.<br><table style=\"WORD-BREAK: break-all\" border=\"0\" cellspacing=\"0\" width=\"100%\"><tr><td style=\"padding-top:1em\"> <p><span style=\"font-family: '应用字体 Regular', '应用字体'; color: grey;\">考点：</span></p></td></tr><tr><td style=\"padding-top:1em\"><span style=\"padding: 0.3em 1em 0.35em;line-height:2em; background: #0ea3f9;color:#ffffff;border-radius:1em\" onclick=GetKnowledgeAnalysis(1,'字母') >字母</span></td></tr></table><script type='text/javascript' defer='defer'>function GetPhoneCat() {var userAgentInfo = navigator.userAgent;var Agents = new Array(\"Android\", \"iPhone\", \"SymbianOS\", \"Windows Phone\", \"iPad\", \"iPod\");var platname = \"Android\";var isPC = true;for (var v = 0; v<Agents.length; v++) {if (userAgentInfo.indexOf(Agents[v]) > 0) { platname = Agents[v]; isPC = false;break;}}return platname;}function GetKnowledgeAnalysis(knowledgeid,knowledgename) {var phoneCat = GetPhoneCat();if (phoneCat === \"Android\") {window.testSite.toTestSite(knowledgeid,knowledgename);}if (phoneCat === \"iPhone\"||phoneCat === \"iPad\"||phoneCat === \"iPod\") {toTestSite(knowledgeid,knowledgename);} }</script><script type='text/javascript' defer='defer'>window.addEventListener('load',function(){var imgArr =document.getElementsByTagName('img');if(imgArr.length >= 1){for(var i= 0;i < imgArr.length ;i++){var img = imgArr[i];var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;if(w<=0 || w=='NaN'){w=305;};if(img.width > w){img.setAttribute('width','100%');}img.setAttribute('max-width','100%');}} var tableArr = document.getElementsByTagName('TABLE');if(tableArr.length > 0){var tb = tableArr[0];               var text = tb.style.cssText + ' line-height:150%;-webkit-text-size-adjust:none;';tb.setAttribute('style',text);}    }) </script>",
+            "grade": "x1",
+            "answer": "A",
+            "chapterId": "001x1001",
+            "bodys": "<table><tbody>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t选出下面是前鼻韵母的一组（ &nbsp; ）<br>\n<br>\nA．ün&nbsp;&nbsp;&nbsp;an&nbsp;&nbsp;&nbsp;un&nbsp;&nbsp;&nbsp;in&nbsp;&nbsp;&nbsp;en&nbsp;&nbsp;<br>\nB．ong &nbsp; eng&nbsp;&nbsp;&nbsp;ing&nbsp;&nbsp;&nbsp;ang\n\t\t\t</td>\n\t\t</tr>\n\t</tbody></table><script type='text/javascript' defer='defer'>window.addEventListener('load',function(){var imgArr =document.getElementsByTagName('img');if(imgArr.length >= 1){for(var i= 0;i < imgArr.length ;i++){var img = imgArr[i];var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;if(w<=0 || w=='NaN'){w=305;};if(img.width > w){img.setAttribute('width','100%');}img.setAttribute('max-width','100%');}} var tableArr = document.getElementsByTagName('TABLE');if(tableArr.length > 0){var tb = tableArr[0];               var text = tb.style.cssText + ' line-height:150%;-webkit-text-size-adjust:none;';tb.setAttribute('style',text);}    }) </script>",
+            "question_id": "25516",
+            "options": "AB",
+            "types": "1",
+            "subject": "01"
+        }
+    ],
+    "extra": {
+        "question_ids": "23519,25513,25516",
+        "grade": "一年级下",
+        "knowledge_title": [
+            {
+                "id": "23519",
+                "unit": "基础知识积累与运用",
+                "title": "字母"
+            },
+            {
+                "id": "23519",
+                "unit": "基础知识积累与运用",
+                "title": "字母"
+            },
+            {
+                "id": "25513",
+                "unit": "基础知识积累与运用",
+                "title": "字母"
+            },
+            {
+                "id": "25513",
+                "unit": "基础知识积累与运用",
+                "title": "字母"
+            },
+            {
+                "id": "25516",
+                "unit": "基础知识积累与运用",
+                "title": "字母"
+            },
+            {
+                "id": "25516",
+                "unit": "基础知识积累与运用",
+                "title": "字母"
+            }
+        ],
+        "edition": "人教版",
+        "time": "4月21日",
+        "stage": "1001_2001_3001_4102",
+        "subject": "语文"
+    }
+}
